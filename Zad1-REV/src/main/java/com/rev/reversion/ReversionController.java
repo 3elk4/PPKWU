@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ReversionController {
+    private StringBuilder sb = null;
+
     @GetMapping("/reversed/{text}")
     public String getReversed(@PathVariable("text") String text){
-        StringBuilder sb = new StringBuilder(text);
+        sb = new StringBuilder(text);
         sb.reverse();
         return sb.toString();
     }
