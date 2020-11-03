@@ -1,0 +1,14 @@
+String API - second exercise for PPKWU laboratories
+
+To start application, open in console folder src located in Zad2-StringAPI folder. Then write down these two commands:
+
+ 1) javac main\java\com\springapi\charlogger\CharloggerApplication.java
+ 2) java CharloggerApplication
+
+ Test this application working by opening web browser and putting this address: 
+ localhost:8080/Test123@!
+
+ Application shoud return:
+ {"Numbers":3,"Signs":2,"Big letters":1,"Small letters":3}
+
+
