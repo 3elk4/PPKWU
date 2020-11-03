@@ -9,15 +9,19 @@ import java.util.Map;
 
 @RestController
 public class StringApiController {
+    private String upperCase = "Big letters";
+    private String lowerCase = "Small letters";
+    private String digitCase = "Numbers";
+    private String signCase = "Signs";
 
     @GetMapping("/{text}")
-    public Map<Character, Integer> getStringLog(@PathVariable("text") String text){
-        Map<Character, Integer> signs = new HashMap<Character, Integer>();
+    public Map<String, Integer> getStringLog(@PathVariable("text") String text){
+        Map<String, Integer> signs = new HashMap<String, Integer>();
         for (char sign : text.toCharArray()){
-            if(Character.isUpperCase(sign)) signs.merge('B', 1, Integer::sum);
-            else if(Character.isLowerCase(sign)) signs.merge('L', 1, Integer::sum);
-            else if(Character.isDigit(sign)) signs.merge('N', 1, Integer::sum);
-            else signs.merge('S', 1, Integer::sum);
+            if(Character.isUpperCase(sign)) signs.merge(upperCase, 1, Integer::sum);
+            else if(Character.isLowerCase(sign)) signs.merge(lowerCase, 1, Integer::sum);
+            else if(Character.isDigit(sign)) signs.merge(digitCase, 1, Integer::sum);
+            else signs.merge(signCase, 1, Integer::sum);
         }
         return signs;
     }
