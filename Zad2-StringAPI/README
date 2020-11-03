@@ -5,10 +5,14 @@ To start application, open in console folder src located in Zad2-StringAPI folde
  1. javac main\java\com\springapi\charlogger\CharloggerApplication.java
  2. java CharloggerApplication
 
- Test this application working by opening web browser and putting this address: 
- > localhost:8080/Test123@!
+ Test application by opening web browser and putting this address: 
+ 
+    localhost:8080/Test123@!
 
  Application should return:
- >{"Numbers":3,"Signs":2,"Big letters":1,"Small letters":3}
+ 
+    {"Numbers":3,"Signs":2,"Big letters":1,"Small letters":3}
+
+Which gives information about how many big letters/small letters/numbers/signs occured in given text. 
 
 
