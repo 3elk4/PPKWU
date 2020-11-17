@@ -12,6 +12,7 @@ public class WEEIAMonthCalendar {
     private String url = "http://www.weeia.p.lodz.pl";
     private String calendarId = "kalendarz";
     private String weekId = "dzien";
+    private String tagId = "a";
 
     private int year, month;
 
@@ -27,7 +28,7 @@ public class WEEIAMonthCalendar {
             Document doc = Jsoup.connect(url).get();
             Element calendar = doc.getElementById(calendarId);
             for (Element week : calendar.getElementsByClass(weekId)) {
-                daysData.addAll(week.getElementsByTag("a"));
+                daysData.addAll(week.getElementsByTag(tagId));
             }
 
         }catch(IOException e){
