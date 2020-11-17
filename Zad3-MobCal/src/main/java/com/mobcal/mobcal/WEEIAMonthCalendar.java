@@ -9,6 +9,7 @@ import java.io.IOException;
 public class WEEIAMonthCalendar {
     private String url = "http://www.weeia.p.lodz.pl";
     private String calendarId = "kalendarz";
+    private String weekId = "dzien";
 
     private int year, month;
 
@@ -17,8 +18,19 @@ public class WEEIAMonthCalendar {
         this.month = month;
     }
 
-    public void GenerateMonthData() throws IOException {
-        Document doc = Jsoup.connect(url).get();
-        Element calendar = doc.getElementById(calendarId);
+    public String GenerateMonthData() {
+        try{
+            Document doc = Jsoup.connect(url).get();
+            StringBuilder sb = new StringBuilder();
+            Element calendar = doc.getElementById(calendarId);
+            for (Element week : calendar.getElementsByClass(weekId)) {
+                for(Element day : week.getAllElements()){
+                    day.getElementByA
+                }
+            }
+            return sb.toString();
+        }catch(IOException e){
+            return e.getMessage();
+        }
     }
 }
