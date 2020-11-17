@@ -24,8 +24,9 @@ public class WEEIAMonthCalendar {
             StringBuilder sb = new StringBuilder();
             Element calendar = doc.getElementById(calendarId);
             for (Element week : calendar.getElementsByClass(weekId)) {
-                for(Element day : week.getAllElements()){
-                    day.getElementByA
+                for(Element day : week.getElementsByTag("a")){
+                    System.out.println(day);
+                    sb.append(day.toString());
                 }
             }
             return sb.toString();
