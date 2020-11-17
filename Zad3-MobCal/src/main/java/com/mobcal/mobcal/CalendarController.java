@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalendarController {
     @GetMapping("/{year}/{month}")
     public String getMonthCalendar(@PathVariable("year") Integer year, @PathVariable("month") Integer month){
+        WEEIAMonthCalendar wmc = new WEEIAMonthCalendar(year, month);
         return "";
     }
 }
