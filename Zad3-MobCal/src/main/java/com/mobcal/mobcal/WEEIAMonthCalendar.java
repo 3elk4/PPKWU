@@ -5,6 +5,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WEEIAMonthCalendar {
     private String url = "http://www.weeia.p.lodz.pl";
@@ -18,20 +20,19 @@ public class WEEIAMonthCalendar {
         this.month = month;
     }
 
-    public String GenerateMonthData() {
+    public List<Element> GenerateMonthData() {
+        List<Element> daysData = new ArrayList<>();
+
         try{
             Document doc = Jsoup.connect(url).get();
-            StringBuilder sb = new StringBuilder();
             Element calendar = doc.getElementById(calendarId);
             for (Element week : calendar.getElementsByClass(weekId)) {
-                for(Element day : week.getElementsByTag("a")){
-                    System.out.println(day);
-                    sb.append(day.toString());
-                }
+                daysData.addAll(week.getElementsByTag("a"));
             }
-            return sb.toString();
+
         }catch(IOException e){
-            return e.getMessage();
+            System.out.println(e.getMessage());
         }
+        return daysData;
     }
 }
