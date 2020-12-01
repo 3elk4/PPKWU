@@ -21,6 +21,6 @@ public class CalendarController {
             return "Oops! There was a problem to create ICS file.";
         }
 
-        return filename + "file was created successfully!";
+        return filename + " file was created successfully!";
     }
 }

@@ -21,4 +21,13 @@ To start application, open in console folder src located in Zad3-MobCal folder. 
 
  > localhost:8080/2020/5
 
- This address refers to May of 2020 year. Based on this information application processes calendar data from WEEIA website for specified month and year. Then calendar information are transmit on device as `May_2020.ics` file.
+ This address refers to May of 2020 year. Based on this information application processes calendar data from WEEIA website for specified month and year. Then calendar information are transmit on device as `May_2020.ics` file if any event occurs at given month.
+ Application shows information on browser page about creation `*.ics` file or inability to do operation. 
+ 
+ If May has any event, application will return:
+ 
+ > May_2020.ics file was created successfully!
+
+ Otherwise, application will return:
+ 
+ > Oops! There was a problem to create ICS file.
