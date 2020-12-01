@@ -1,14 +1,21 @@
 package com.mobcal.mobcal;
+import net.fortuna.ical4j.data.CalendarOutputter;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.property.CalScale;
 import net.fortuna.ical4j.model.property.ProdId;
 import net.fortuna.ical4j.model.property.Version;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.nodes.Element;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.time.Month;
 import java.util.List;
 
 public class ICSCreator {
-    List<Element> days;
-    int year, month;
+    private final String directoryName = "calfiles/";
+    private List<Element> days;
+    private int year, month;
 
     public ICSCreator(List<Element> days, int month, int year){
         this.days = days;
@@ -32,6 +39,25 @@ public class ICSCreator {
     }
 
     public String GenerateICSFile(Calendar calendar){
-        return "";
+        String calendarName = CreateCalendarName();
+        FileOutputStream fout = null;
+        try {
+            fout = new FileOutputStream(directoryName + calendarName);
+            CalendarOutputter outputter = new CalendarOutputter();
+            outputter.output(calendar, fout);
+        } catch (Exception e) {
+            return null;
+        } finally {
+            try {
+                fout.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return calendarName;
+    }
+
+    private String CreateCalendarName(){
+        return StringUtils.capitalize(Month.of(month).name().toLowerCase()) + "_" + year + ".ics";
     }
 }
