@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WEEIAMonthCalendar {
-    private String url = "http://www.weeia.p.lodz.pl";
     private String calendarId = "kalendarz";
     private String weekId = "dzien";
     private String tagId = "a";
@@ -25,7 +24,7 @@ public class WEEIAMonthCalendar {
         List<Element> daysData = new ArrayList<>();
 
         try{
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(URL()).get();
             Element calendar = doc.getElementById(calendarId);
             for (Element week : calendar.getElementsByClass(weekId)) {
                 daysData.addAll(week.getElementsByTag(tagId));
@@ -35,5 +34,9 @@ public class WEEIAMonthCalendar {
             System.out.println(e.getMessage());
         }
         return daysData;
+    }
+
+    private String URL() {
+        return "http://www.weeia.p.lodz.pl/pliki_strony_kontroler/kalendarz.php?rok=" + year + "&miesiac=" + String.format("%02d", month);
     }
 }
