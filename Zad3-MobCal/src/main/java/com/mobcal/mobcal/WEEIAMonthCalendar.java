@@ -11,7 +11,7 @@ import java.util.List;
 public class WEEIAMonthCalendar {
     private String calendarId = "kalendarz";
     private String weekId = "dzien";
-    private String tagId = "a";
+    private String tagId = "td";
 
     private int year, month;
 
