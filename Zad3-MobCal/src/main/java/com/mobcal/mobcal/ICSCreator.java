@@ -22,6 +22,12 @@ public class ICSCreator {
         calendar.getProperties().add(Version.VERSION_2_0);
         calendar.getProperties().add(CalScale.GREGORIAN);
 
+        days.forEach(day -> {
+            if(day.hasClass("active")){
+                System.out.println(day);
+            }
+        });
+
         return calendar;
     }
 }
