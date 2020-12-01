@@ -24,7 +24,7 @@ public class ICSCreator {
 
         days.forEach(day -> {
             if(day.hasClass("active")){
-                System.out.println(day);
+                calendar.getComponents().add(EventGenerator.Generate(day, month, year));
             }
         });
 

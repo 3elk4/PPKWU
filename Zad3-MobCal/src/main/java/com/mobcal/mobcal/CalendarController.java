@@ -16,6 +16,7 @@ public class CalendarController {
         List<Element> daysData = wmc.GenerateMonthData();
         ICSCreator creator = new ICSCreator(daysData, month, year);
         Calendar calendar = creator.GenerateCalendarData();
+        System.out.println(calendar);
         return "Calendar created successfully!";
     }
 }
