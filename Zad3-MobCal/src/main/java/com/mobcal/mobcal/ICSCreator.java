@@ -30,4 +30,8 @@ public class ICSCreator {
 
         return calendar;
     }
+
+    public String GenerateICSFile(Calendar calendar){
+        return "";
+    }
 }
