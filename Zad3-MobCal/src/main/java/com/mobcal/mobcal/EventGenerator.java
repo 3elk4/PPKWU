@@ -9,12 +9,12 @@ import org.jsoup.nodes.Element;
 import java.util.Calendar;
 
 public class EventGenerator {
-    private static Calendar cal = java.util.Calendar.getInstance();
+    private static final Calendar cal = java.util.Calendar.getInstance();
+    private static final String TitleClassName = "InnerBox";
+    private static final String DayTagName = "a";
 
     public static CalendarComponent Generate(Element day, int month, int year){
-        String name = day.getElementsByClass("InnerBox").text();
-        int dayNumber = Integer.parseInt(day.getElementsByTag("a").text());
-        VEvent event = new VEvent(CreateEventStart(dayNumber, month, year), name);
+        VEvent event = new VEvent(CreateEventStart(Day(day), month, year), Name(day));
         return event;
     }
 
@@ -25,5 +25,12 @@ public class EventGenerator {
         cal.setTimeZone(TimeZone.getDefault());
 
         return new Date(cal.getTime());
+    }
+
+    private static int Day(Element day){
+        return Integer.parseInt(day.getElementsByTag(DayTagName).text());
+    }
+    private static String Name(Element day){
+        return day.getElementsByClass(TitleClassName).text();
     }
 }
