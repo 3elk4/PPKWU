@@ -31,3 +31,9 @@ To start application, open in console folder src located in Zad3-MobCal folder. 
  Otherwise, application will return:
  
  > Oops! There was a problem to create ICS file.
+ 
+ Example .ics files could downloaded here:
+<br>
+<a href="March_2020.ics" download="download"> March 2020 </a>
+<br>
+<a href="October_2020.ics" download="download"> October 2020 </a>
