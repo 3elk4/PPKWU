@@ -36,19 +36,16 @@ public class ServiceOffersGenerator {
             for (Element offer : offers.getElementsByTag(offerId)) {
                 String company_name = offer.getElementsByClass(companyNameId).text();
                 String address = offer.getElementsByClass(addressId).text();
-                var phone = offer.getElementsByClass(telephoneIconId).first();
-                if(phone != null){
-                    System.out.println(phone.attr(telephoneAttrId));
-                }
 
-                var email = offer.getElementsByClass(emailIconId).first();
-                if(email != null){
-                    System.out.println(email.attr(emailAttrId));
-                }
-                System.out.println();
-               // System.out.println(offer.getElementsByClass(emailIconId));
-//                VCardModel vcard = new VCardModel();
-//                vcardsData.add(vcard);
+                String phone_number = "";
+                String email = "";
+                var phone = offer.getElementsByClass(telephoneIconId).first();
+                if(phone != null) phone_number = phone.attr(telephoneAttrId);
+                var em = offer.getElementsByClass(emailIconId).first();
+                if(em != null) email = em.attr(emailAttrId);
+
+                VCardModel vcard = new VCardModel(company_name, phone_number, address, email);
+                vcardsData.add(vcard);
             }
 
         }catch(IOException e){
