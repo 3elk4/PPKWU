@@ -21,8 +21,9 @@ public class VCardController {
     public String generateVcf(@PathVariable("id") int id){
         if(vcards == null || vcards.isEmpty()) return "Oops! There was a problem to create VCF file.";
 
-        var vcard = vcards.get(id);
-        //generate vcard + zapisz plik
+        var vCardModel = vcards.get(id);
+        var vCard = VCardGenerator.GenerateVCard(vCardModel);
+        if(!VCardGenerator.GenerateVCF(vCard, vCardModel.CompanyName)) return "Oops! There was a problem to create VCF file.";
         return "File was created successfully!";
     }
 
