@@ -3,6 +3,8 @@ package com.vcard.vcard;
 import ezvcard.Ezvcard;
 import ezvcard.VCard;
 import ezvcard.property.Address;
+import ezvcard.property.FormattedName;
+import ezvcard.property.Organization;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,7 +12,9 @@ import java.io.IOException;
 public class VCardGenerator {
     public static VCard GenerateVCard(VCardModel model){
         VCard vcard = new VCard();
-        vcard.addFormattedName();
+        var org= new Organization();
+        org.setSortAs(model.CompanyName);
+        vcard.addOrganization(org);
         vcard.addEmail();
         vcard.addTelephoneNumber();
         vcard.addAddress();
