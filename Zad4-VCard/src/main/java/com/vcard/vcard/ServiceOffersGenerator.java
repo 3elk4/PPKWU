@@ -12,6 +12,10 @@ public class ServiceOffersGenerator {
     private String companyListId = "company-list";
     private String companyNameId = "company-name";
     private String addressId = "address";
+    private String telephoneIconId = "icon-telephone";
+    private String telephoneAttrId = "title";
+    private String emailIconId = "icon-envelope";
+    private String emailAttrId = "data-company-email";
     private String offerId = "li";
 
     private String URL(){
@@ -32,7 +36,17 @@ public class ServiceOffersGenerator {
             for (Element offer : offers.getElementsByTag(offerId)) {
                 String company_name = offer.getElementsByClass(companyNameId).text();
                 String address = offer.getElementsByClass(addressId).text();
-                System.out.println(offer.getElementsByClass("icon-telephone"));
+                var phone = offer.getElementsByClass(telephoneIconId).first();
+                if(phone != null){
+                    System.out.println(phone.attr(telephoneAttrId));
+                }
+
+                var email = offer.getElementsByClass(emailIconId).first();
+                if(email != null){
+                    System.out.println(email.attr(emailAttrId));
+                }
+                System.out.println();
+               // System.out.println(offer.getElementsByClass(emailIconId));
 //                VCardModel vcard = new VCardModel();
 //                vcardsData.add(vcard);
             }
