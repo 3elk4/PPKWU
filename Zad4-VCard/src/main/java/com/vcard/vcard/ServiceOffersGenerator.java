@@ -11,6 +11,7 @@ import java.util.List;
 public class ServiceOffersGenerator {
     private String companyListId = "company-list";
     private String companyNameId = "company-name";
+    private String addressId = "address";
     private String offerId = "li";
 
     private String URL(){
@@ -29,7 +30,9 @@ public class ServiceOffersGenerator {
             Document doc = Jsoup.connect(URL()).get();
             Element offers = doc.getElementById(companyListId);
             for (Element offer : offers.getElementsByTag(offerId)) {
-                System.out.println(offer.getElementsByClass(companyNameId).text());
+                String company_name = offer.getElementsByClass(companyNameId).text();
+                String address = offer.getElementsByClass(addressId).text();
+                System.out.println(offer.getElementsByClass("icon-telephone"));
 //                VCardModel vcard = new VCardModel();
 //                vcardsData.add(vcard);
             }
