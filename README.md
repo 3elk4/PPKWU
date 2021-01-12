@@ -52,7 +52,7 @@ After clicking button `Generate` on *Anna Kołota Udrażnianie rur* record, ther
 <br>
 <a href="KamilPrzęczek.vcf" download="KamilPrzęczek"> Kamil Przęczek </a>
 <br>
-<a href="BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła.vcf" download="BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła"> Bud Bramy, ogrodzenia, usługi hydrauliczne Kazimierz Kuzioła </a>
+<a href="Kaz-BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła.vcf" download="Kaz-BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła"> Kaz-Bud Bramy, ogrodzenia, usługi hydrauliczne Kazimierz Kuzioła </a>
 <br>
 
 
