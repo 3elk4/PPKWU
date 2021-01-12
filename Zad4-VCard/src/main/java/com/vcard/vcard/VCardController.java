@@ -8,23 +8,26 @@ import java.util.List;
 
 @RestController
 public class VCardController {
-    List<VCardModel> vcards = null;
+    private List<VCardModel> vcards = null;
+    private ServiceOffersGenerator sog = new ServiceOffersGenerator();
 
     @GetMapping("/{trade}")
-    public List<VCardModel> getTrades(@PathVariable("trade") String trade) {
-       ServiceOffersGenerator sog = new ServiceOffersGenerator(trade);
-       var vcards = sog.GenerateVCards();
-       return vcards;
+    public String getTrades(@PathVariable("trade") String trade) {
+       sog.SetProfession(trade);
+       vcards = sog.GenerateVCards();
+       return WebsiteGenerator.GenerateWebsite(trade, vcards);
     }
 
     @GetMapping("/offers/{id}")
     public String generateVcf(@PathVariable("id") int id){
-        if(vcards == null || vcards.isEmpty()) return "Oops! There was a problem to create VCF file.";
+        if(vcards == null || vcards.isEmpty()) return error;
 
         var vCardModel = vcards.get(id);
         var vCard = VCardGenerator.GenerateVCard(vCardModel);
-        if(!VCardGenerator.GenerateVCF(vCard, vCardModel.CompanyName)) return "Oops! There was a problem to create VCF file.";
-        return "File was created successfully!";
+        if(!VCardGenerator.GenerateVCF(vCard, vCardModel.CompanyName)) return error;
+        return success;
     }
 
+    private String success = "File was created successfully!";
+    private String error = "Oops! There was a problem to create VCF file.";
 }
