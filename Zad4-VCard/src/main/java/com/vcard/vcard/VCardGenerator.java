@@ -11,7 +11,8 @@ public class VCardGenerator {
     public static VCard GenerateVCard(VCardModel model){
         VCard vcard = new VCard();
 
-        vcard.addOrganization(PrepareCompanyName(model.CompanyName));
+        vcard.setStructuredName(PrepareName(model.CompanyName));
+        vcard.addFormattedName(PrepareFormattedName(model.CompanyName));
         vcard.addEmail(PrepareEmail(model.Email));
         vcard.addTelephoneNumber(PreparePhoneNumber(model.PhoneNumber));
         vcard.addAddress(PrepareAddress(model.Address));
@@ -30,7 +31,7 @@ public class VCardGenerator {
     }
 
     private static String CreateFileName(String name){
-        return name + ".vcf";
+        return name.replaceAll("\\s","") + ".vcf";
     }
 
     private static Address PrepareAddress(String address){
@@ -47,9 +48,13 @@ public class VCardGenerator {
         return new Email(email);
     }
 
-    private static Organization PrepareCompanyName(String companyName){
-        var org = new Organization();
-        org.setSortAs(companyName);
-        return org;
+    private static FormattedName PrepareFormattedName(String companyName){
+        return new FormattedName(companyName);
+    }
+
+    private static StructuredName PrepareName(String companyName){
+        StructuredName structuredName = new StructuredName();
+        structuredName.setFamily(companyName);
+        return structuredName;
     }
 }
