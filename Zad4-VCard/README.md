@@ -43,5 +43,15 @@ After clicking button `Generate` on *Anna Kołota Udrażnianie rur* record, ther
 Examples of `.vcf` files could download here:
 <br>
 <a href="AdamKołotaUdrażnianierur.vcf" download="download"> Adam Kołota Udrażnianie rur </a>
-
+<br>
+<a href="FhuNypelUsługiHydrauliczneŁukaszSzydliński.vcf" download="FhuNypelUsługiHydrauliczneŁukaszSzydliński"> Fhu Nypel Usługi Hydrauliczne Łukasz Szydliński </a>
+<br>
+<a href="HydraulikaMontażInstalacjiSanitarnychiGrzewczychRobertRosłoniec.vcf" download="HydraulikaMontażInstalacjiSanitarnychiGrzewczychRobertRosłoniec"> Hydraulika Montaż Instalacji Sanitarnych i Grzewczych Robert Rosłoniec </a>
+<br>
+<a href="HydroSebFUSebastianJeziorowski.vcf" download="HydroSebFUSebastianJeziorowski"> Hydro Seb FU Sebastian Jeziorowski </a>
+<br>
+<a href="KamilPrzęczek.vcf" download="KamilPrzęczek"> Kamil Przęczek </a>
+<br>
+<a href="Kaz-BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła.vcf" download="Kaz-BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła"> Kaz-Bud Bramy, ogrodzenia, usługi hydrauliczne Kazimierz Kuzioła </a>
+<br>
 
