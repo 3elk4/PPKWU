@@ -42,6 +42,6 @@ After clicking button `Generate` on *Anna Kołota Udrażnianie rur* record, ther
 
 Examples of `.vcf` files could download here:
 <br>
-<a href="AdamKołotaUdrażnianierur.vcf" download="download"> Adam Kołota Udrażnianie rur </a>
+<a href="AdamKołotaUdrażnianierur.vcf" download="AdamKołotaUdrażnianierur"> Adam Kołota Udrażnianie rur </a>
 
 
