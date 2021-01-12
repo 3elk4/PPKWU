@@ -11,11 +11,11 @@ public class VCardController {
     private List<VCardModel> vcards = null;
     private ServiceOffersGenerator sog = new ServiceOffersGenerator();
 
-    @GetMapping("/{trade}")
-    public String getTrades(@PathVariable("trade") String trade) {
-       sog.SetProfession(trade);
+    @GetMapping("/{profession}")
+    public String getTrades(@PathVariable("profession") String profession) {
+       sog.SetProfession(profession);
        vcards = sog.GenerateVCards();
-       return WebsiteGenerator.GenerateWebsite(trade, vcards);
+       return WebsiteGenerator.GenerateWebsite(profession, vcards);
     }
 
     @GetMapping("/offers/{id}")

@@ -1,6 +1,6 @@
 ## WEEIA Mobile VCard - fourth exercise for PPKWU laboratories
 
-This application prepares `*.vcf` file based on service offers located at https://panoramafirm.pl. Generated VCard for given trade and choosen record can be added to contacts on mobile device.
+This application prepares `*.vcf` file based on service offers located at https://panoramafirm.pl. Generated VCard for given profession and choosen record can be added to contacts on mobile device.
 
 #### Starting application
 
@@ -13,9 +13,9 @@ To start application, open in console folder src located in Zad4-VCard folder. T
 
  Test application by opening web browser and putting address with proper parameters: 
  
- > localhost:8080/{trade}
+ > localhost:8080/{profession}
 
- Where parameter `trade` defines which service offers will be searched.
+ Where parameter `profession` defines which service offers will be searched.
 
  Example:
 

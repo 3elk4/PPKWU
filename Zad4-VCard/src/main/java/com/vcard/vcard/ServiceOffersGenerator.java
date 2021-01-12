@@ -20,13 +20,13 @@ public class ServiceOffersGenerator {
     private int pageNum = 1;
 
     private String URL(){
-        return "https://panoramafirm.pl/" + trade + "/firmy," + pageNum + ".html";
+        return "https://panoramafirm.pl/" + profession + "/firmy," + pageNum + ".html";
     }
 
-    private String trade;
+    private String profession;
     public ServiceOffersGenerator(){
     }
-    public void SetProfession(String profession){ this.trade = profession; }
+    public void SetProfession(String profession){ this.profession = profession; }
     private List<VCardModel> vcardsData = new ArrayList<>();
 
     public List<VCardModel> GenerateVCards(){
