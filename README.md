@@ -40,8 +40,19 @@ After clicking button `Generate` on *Anna Kołota Udrażnianie rur* record, ther
 1) Website replies with `File was created successfully!` message and generates vcard file named `AnnaKołotaUdrażnianierur.vcf`. 
 2) Website replies with `Oops! There was a problem to create VCF file.` message. This means service is unable to generate vcard file.
 
-Examples of `.vcf` files could download here:
+**Examples of `.vcf` files could download here:**
 <br>
 <a href="AdamKołotaUdrażnianierur.vcf" download="AdamKołotaUdrażnianierur"> Adam Kołota Udrażnianie rur </a>
+<br>
+<a href="FhuNypelUsługiHydrauliczneŁukaszSzydliński.vcf" download="FhuNypelUsługiHydrauliczneŁukaszSzydliński"> Fhu Nypel Usługi Hydrauliczne Łukasz Szydliński </a>
+<br>
+<a href="HydraulikaMontażInstalacjiSanitarnychiGrzewczychRobertRosłoniec.vcf" download="HydraulikaMontażInstalacjiSanitarnychiGrzewczychRobertRosłoniec"> Hydraulika Montaż Instalacji Sanitarnych i Grzewczych Robert Rosłoniec </a>
+<br>
+<a href="HydroSebFUSebastianJeziorowski.vcf" download="HydroSebFUSebastianJeziorowski"> Hydro Seb FU Sebastian Jeziorowski </a>
+<br>
+<a href="KamilPrzęczek.vcf" download="KamilPrzęczek"> Kamil Przęczek </a>
+<br>
+<a href="BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła.vcf" download="BudBramy,ogrodzenia,usługihydrauliczneKazimierzKuzioła"> Bud Bramy, ogrodzenia, usługi hydrauliczne Kazimierz Kuzioła </a>
+<br>
 
 
