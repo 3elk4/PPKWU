@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:ez-vcard 0.11.2
+N:Kamil Przęczek
+FN:Kamil Przęczek
+EMAIL:kamilprzeczek@interia.pl
+TEL:516 765 572
+ADR:;;32-020 Grabówki 12
+END:VCARD
