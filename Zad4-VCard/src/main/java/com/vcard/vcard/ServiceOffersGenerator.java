@@ -17,37 +17,41 @@ public class ServiceOffersGenerator {
     private String emailIconId = "icon-envelope";
     private String emailAttrId = "data-company-email";
     private String offerId = "li";
+    private int pageNum = 1;
 
     private String URL(){
-        return "https://panoramafirm.pl/szukaj?k=" + trade;
+        return "https://panoramafirm.pl/" + trade + "/firmy," + pageNum + ".html";
     }
 
     private String trade;
-    public ServiceOffersGenerator(String trade){
-        this.trade = trade;
+    public ServiceOffersGenerator(){
     }
+    public void SetProfession(String profession){ this.trade = profession; }
+    private List<VCardModel> vcardsData = new ArrayList<>();
 
     public List<VCardModel> GenerateVCards(){
-        List<VCardModel> vcardsData = new ArrayList<>();
-
         try {
-            Document doc = Jsoup.connect(URL()).get();
-            Element offers = doc.getElementById(companyListId);
-            for (Element offer : offers.getElementsByTag(offerId)) {
-                String company_name = offer.getElementsByClass(companyNameId).text();
-                String address = offer.getElementsByClass(addressId).text();
+            for(int i = 1; i < 4; ++i){
+                pageNum = i;
+                Document doc = Jsoup.connect(URL()).get();
+                Element offers = doc.getElementById(companyListId);
+                for (Element offer : offers.getElementsByTag(offerId)) {
+                    String company_name = offer.getElementsByClass(companyNameId).text();
+                    String address = offer.getElementsByClass(addressId).text();
 
-                String phone_number = "";
-                String email = "";
-                var phone = offer.getElementsByClass(telephoneIconId).first();
-                if(phone != null) phone_number = phone.attr(telephoneAttrId);
-                var em = offer.getElementsByClass(emailIconId).first();
-                if(em != null) email = em.attr(emailAttrId);
+                    String phone_number = "";
+                    String email = "";
+                    var phone = offer.getElementsByClass(telephoneIconId).first();
+                    if(phone != null) phone_number = phone.attr(telephoneAttrId);
+                    var em = offer.getElementsByClass(emailIconId).first();
+                    if(em != null) email = em.attr(emailAttrId);
 
-                VCardModel vcard = new VCardModel(company_name, phone_number, address, email);
-                vcardsData.add(vcard);
+                    VCardModel vcard = new VCardModel(company_name, phone_number, address, email);
+                    if(!vcard.CompanyName.isEmpty()){
+                        vcardsData.add(vcard);
+                    }
+                }
             }
-
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
